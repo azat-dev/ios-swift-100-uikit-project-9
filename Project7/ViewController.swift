@@ -8,11 +8,24 @@
 import UIKit
 
 class ViewController: UITableViewController {
-    var petitions = [String]()
+    var petitions = [Petition]()
+    
+    func loadData() {
+        let urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
+        
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        guard let data = try? Data(contentsOf: url) else {
+            return
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        loadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
