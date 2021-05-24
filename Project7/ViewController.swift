@@ -21,6 +21,11 @@ class ViewController: UITableViewController {
             return
         }
         
+        guard let petitions = Petitions(json: data) else {
+            return
+        }
+        
+        self.petitions = petitions.results
     }
     
     override func viewDidLoad() {
