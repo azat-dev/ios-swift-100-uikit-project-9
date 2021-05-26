@@ -49,9 +49,31 @@ class ViewController: UITableViewController {
         self.petitions = petitions.results
     }
     
+    @objc func creditsButtonTapped() {
+        let alert = UIAlertController(
+            title: "Credits",
+            message: "The data comes from the \"We The People API\" of the Whitehouse",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(.init(title: "Ok", style: .default))
+        
+        present(alert, animated: true)
+    }
+    
+    func initNavBar() {
+        navigationItem.rightBarButtonItem = .init(
+            image: .init(systemName: "info.circle.fill"),
+            style: .plain,
+            target: self,
+            action: #selector(creditsButtonTapped)
+        )
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        initNavBar()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
