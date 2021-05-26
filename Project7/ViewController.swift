@@ -11,7 +11,13 @@ class ViewController: UITableViewController {
     var petitions = [Petition]()
     
     func loadData() {
-        let urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
+        let urlString: String
+        
+        if navigationController?.tabBarItem.tag == 0 {
+            urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
+        } else {
+            urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
+        }
         
         guard let url = URL(string: urlString) else {
             return
