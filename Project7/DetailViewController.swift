@@ -26,6 +26,9 @@ class DetailViewController: UIViewController {
             return
         }
         
+        title = detailItem.title
+        navigationItem.largeTitleDisplayMode = .always
+        
         let html = """
         <html>
         <head>
