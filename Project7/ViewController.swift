@@ -10,6 +10,18 @@ import UIKit
 class ViewController: UITableViewController {
     var petitions = [Petition]()
     
+    func showError() {
+        let alert = UIAlertController(
+            title: "Loading error",
+            message: "There was a problem loading the feed; please check your connection and try again.",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(.init(title: "Ok", style: .default))
+        
+        present(alert, animated: true)
+    }
+    
     func loadData() {
         let urlString: String
         
@@ -20,14 +32,17 @@ class ViewController: UITableViewController {
         }
         
         guard let url = URL(string: urlString) else {
+            showError()
             return
         }
         
         guard let data = try? Data(contentsOf: url) else {
+            showError()
             return
         }
         
         guard let petitions = Petitions(json: data) else {
+            showError()
             return
         }
         
