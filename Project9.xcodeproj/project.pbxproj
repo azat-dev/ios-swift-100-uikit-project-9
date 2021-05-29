@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AAA8DE60265C0C3C00DAC5D9 /* Project7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project7.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAA8DE60265C0C3C00DAC5D9 /* Project9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA8DE63265C0C3C00DAC5D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAA8DE65265C0C3C00DAC5D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AAA8DE67265C0C3C00DAC5D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		AAA8DE57265C0C3C00DAC5D9 = {
 			isa = PBXGroup;
 			children = (
-				AAA8DE62265C0C3C00DAC5D9 /* Project7 */,
+				AAA8DE62265C0C3C00DAC5D9 /* Project9 */,
 				AAA8DE61265C0C3C00DAC5D9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 		AAA8DE61265C0C3C00DAC5D9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AAA8DE60265C0C3C00DAC5D9 /* Project7.app */,
+				AAA8DE60265C0C3C00DAC5D9 /* Project9.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AAA8DE62265C0C3C00DAC5D9 /* Project7 */ = {
+		AAA8DE62265C0C3C00DAC5D9 /* Project9 */ = {
 			isa = PBXGroup;
 			children = (
 				AAA8DE63265C0C3C00DAC5D9 /* AppDelegate.swift */,
@@ -73,15 +73,15 @@
 				AAA8DE6E265C0C3C00DAC5D9 /* LaunchScreen.storyboard */,
 				AAA8DE71265C0C3C00DAC5D9 /* Info.plist */,
 			);
-			path = Project7;
+			path = Project9;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AAA8DE5F265C0C3C00DAC5D9 /* Project7 */ = {
+		AAA8DE5F265C0C3C00DAC5D9 /* Project9 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AAA8DE74265C0C3C00DAC5D9 /* Build configuration list for PBXNativeTarget "Project7" */;
+			buildConfigurationList = AAA8DE74265C0C3C00DAC5D9 /* Build configuration list for PBXNativeTarget "Project9" */;
 			buildPhases = (
 				AAA8DE5C265C0C3C00DAC5D9 /* Sources */,
 				AAA8DE5D265C0C3C00DAC5D9 /* Frameworks */,
@@ -91,9 +91,9 @@
 			);
 			dependencies = (
 			);
-			name = Project7;
+			name = Project9;
 			productName = Project7;
-			productReference = AAA8DE60265C0C3C00DAC5D9 /* Project7.app */;
+			productReference = AAA8DE60265C0C3C00DAC5D9 /* Project9.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -110,7 +110,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AAA8DE5B265C0C3C00DAC5D9 /* Build configuration list for PBXProject "Project7" */;
+			buildConfigurationList = AAA8DE5B265C0C3C00DAC5D9 /* Build configuration list for PBXProject "Project9" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -123,7 +123,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AAA8DE5F265C0C3C00DAC5D9 /* Project7 */,
+				AAA8DE5F265C0C3C00DAC5D9 /* Project9 */,
 			);
 		};
 /* End PBXProject section */
@@ -300,12 +300,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8JWF52JVK7;
-				INFOPLIST_FILE = Project7/Info.plist;
+				INFOPLIST_FILE = Project9/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Azat-Kaiumov.Project7";
+				PRODUCT_BUNDLE_IDENTIFIER = "Azat-Kaiumov.Project9";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -319,12 +319,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8JWF52JVK7;
-				INFOPLIST_FILE = Project7/Info.plist;
+				INFOPLIST_FILE = Project9/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Azat-Kaiumov.Project7";
+				PRODUCT_BUNDLE_IDENTIFIER = "Azat-Kaiumov.Project9";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -334,7 +334,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AAA8DE5B265C0C3C00DAC5D9 /* Build configuration list for PBXProject "Project7" */ = {
+		AAA8DE5B265C0C3C00DAC5D9 /* Build configuration list for PBXProject "Project9" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AAA8DE72265C0C3C00DAC5D9 /* Debug */,
@@ -343,7 +343,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AAA8DE74265C0C3C00DAC5D9 /* Build configuration list for PBXNativeTarget "Project7" */ = {
+		AAA8DE74265C0C3C00DAC5D9 /* Build configuration list for PBXNativeTarget "Project9" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AAA8DE75265C0C3C00DAC5D9 /* Debug */,
