@@ -8,11 +8,20 @@
 import UIKit
 
 class ViewController: UITableViewController {
-    var petitions = [Petition]()
     var filteredPetitions = [Petition]()
-    var filterText: String?
+    var petitions = [Petition]() {
+        didSet {
+            updateFilteredItems()
+        }
+    }
     
-    func showError() {
+    var filterText: String? {
+        didSet {
+            updateFilteredItems()
+        }
+    }
+    
+    @objc func showError() {
         let alert = UIAlertController(
             title: "Loading error",
             message: "There was a problem loading the feed; please check your connection and try again.",
@@ -24,31 +33,52 @@ class ViewController: UITableViewController {
         present(alert, animated: true)
     }
     
-    func loadData() {
+    @objc func reloadTable() {
+        self.tableView.performSelector(
+            onMainThread: #selector(UITableView.reloadData),
+            with: nil,
+            waitUntilDone: false
+        )
+    }
+    
+    func loadData(tabIndex: Int) {
         let urlString: String
         
-        if navigationController?.tabBarItem.tag == 0 {
+        let showErrorInMainThread = {
+            self.performSelector(
+                onMainThread: #selector(self.showError),
+                with: nil,
+                waitUntilDone: false
+            )
+        }
+        
+        if tabIndex == 0 {
             urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
         } else {
             urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
         }
         
         guard let url = URL(string: urlString) else {
-            showError()
+            showErrorInMainThread()
             return
         }
         
         guard let data = try? Data(contentsOf: url) else {
-            showError()
+            showErrorInMainThread()
             return
         }
         
         guard let petitions = Petitions(json: data) else {
-            showError()
+            showErrorInMainThread()
             return
         }
         
         self.petitions = petitions.results
+        performSelector(
+            onMainThread: #selector(reloadTable),
+            with: nil,
+            waitUntilDone: false
+        )
     }
     
     @objc func creditsButtonTapped() {
@@ -77,7 +107,6 @@ class ViewController: UITableViewController {
     func updateFilter(text: String?) {
         self.filterText = text
         updateFilterButton()
-        updateFilteredItems()
         tableView.reloadData()
     }
     
@@ -139,9 +168,12 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
-        updateFilteredItems()
         initNavBar()
+        
+        let tabIndex = navigationController?.tabBarItem.tag ?? 0
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.loadData(tabIndex: tabIndex)
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
